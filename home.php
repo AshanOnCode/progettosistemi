@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,10 +9,25 @@
 </head>
 <body>
     <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-    <div class="video-div">
-        <video id="videoPlayer"></video>
+    <div class="video-player">
+        <video
+                class="video"
+                controls
+        ></video>
+        <div class="player-controls">
+            <div class="volume-container">
+                <label>
+                    <input type="range" class="volume" min="0" max="1" step="0.01" value="0.5">
+                </label>
+            </div>
+            <button class="play-button" title="Play">❤️</button>
+
+
+
+
+
+        </div>
     </div>
-    <script src="VideoLoader.js"></script>
-    <script src="VideoPlayerUi.js"></script>
+    <script src="Video.js"></script>
 </body>
 </html>
