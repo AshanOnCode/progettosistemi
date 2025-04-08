@@ -1,42 +1,13 @@
 <?php
-require_once 'vendor/autoload.php';
+    require_once('vendor/autoload.php');
 
-use \SleekDB\Store;
-use \SleekDB\Query;
+    use SleekDB\Store;
 
-// default configurations
-$configuration = [
-    "auto_cache" => true,
-    "cache_lifetime" => null,
-    "timeout" => false,
-    "primary_key" => "_id",
-    "search" => [
-        "min_length" => 2,
-        "mode" => "or",
-        "score_key" => "scoreKey",
-        "algorithm" => Query::SEARCH_ALGORITHM["hits"]
-    ],
-    "folder_permissions" => 0777
-];
+    $store = new Store('database', 'data_folder');
 
-$dataDir = __DIR__ . "/database";
+    $store->insert([
+        'name' => 'Mario',
+        'age' => 30
+    ]);
 
-$userStore = new Store('users', $dataDir, $configuration);
 
-$user = [
-    '_id' => 1,
-    'name' => 'Mike Doe',
-    'email' => 'miked@example.com',
-    'avatar' => [
-        'sm' => "/img-sm.jpg",
-        'lg' => "/img-lg.jpg"
-    ]
-];
-
-$userStore->updateOrInsert($user);
-
-$allUsers = $userStore->findAll();
-
-print_r($allUsers);
-//$userStore->deleteStore();
-?>
