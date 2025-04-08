@@ -3,11 +3,19 @@
 
     use SleekDB\Store;
 
-    $store = new Store('database', 'data_folder');
+    $configuration = ['timeout'=>false];
 
-    $store->insert([
+    $store = new Store('database', 'data_folder', $configuration);
+
+    $store->updateOrInsert([
+        '_id' => 2,
         'name' => 'Mario',
         'age' => 30
     ]);
+
+    $users = $store->findAll();
+
+    print_r($users);
+    //$store->deleteStore();
 
 
