@@ -53,7 +53,7 @@
   </div>
 </div>
 </div>
-<!-- <script src="scripts/videoLoader.js"></script> -->
+
 <script src="scripts/script.js"></script>
 </body>
 </html>
