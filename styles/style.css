@@ -15,27 +15,71 @@ body {
     height: 100vh;
 }
 
-/* Player Components */
+
+.container{
+    border: 1px solid var(--devider-color);
+    margin: 20px;
+}
+
+.top-div{
+    border: 1px solid var(--devider-color);
+}
+
+.video-div{
+    border: 1px solid var(--devider-color);
+}
+
+.epList-div{
+    border: 1px solid var(--devider-color);
+}
+
+.bottom-div{
+    border: 1px solid var(--devider-color);
+}
+
+.detailes-div{
+    border: 1px solid var(--devider-color);
+}
+
+.seasonList-div{
+    border: 1px solid var(--devider-color);
+}
+
+video{
+    height: 200px;
+    width: auto;
+    
+    border-radius: 2px;
+}
+
+.coverImg{
+    height: 100px;
+    width: auto;
+
+    border-radius: 2px;
+}
+
+
+/*
+Player Components
 .video-container {
     position: relative;
     max-width: 800px;
-    width: 90%;
+    width: 80%;
 }
 
 video {
     position: absolute;
-    top: 0;
-    left: 0;
 
     width: 100%;
     display: block;
     border-radius: 10px;
 }
 
-/* Player Controls */
+ Player Controls
 .controls {
     position: absolute;
-    bottom: 0; /* Position div2 at the bottom of div1 */
+    bottom: 0; Position div2 at the bottom of div1
     left: 0;
 
     width: 100%;
@@ -56,7 +100,7 @@ button.icon {
 
 .progress-bar {
     position: relative;
-    height: 6px;
+    height: 2px;
     background: green;
     border-radius: 3px;
 }
@@ -75,3 +119,4 @@ input[type="range"] {
     width: auto;
     height: 15px;
 }
+*/

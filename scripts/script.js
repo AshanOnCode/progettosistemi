@@ -4,15 +4,19 @@ const timeDisplay = document.getElementById('time');
 const volume = document.getElementById('volume');
 const fullscreenBtn = document.getElementById('fullscreen');
 
-const progress = document.getElementById('progress');
-const progressFill = document.getElementById("progressFill");
+// const progress = document.getElementById('progress');
+// const progressFill = document.getElementById("progressFill");
 
 var videoSrc = "http://sample.vodobox.net/skate_phantom_flex_4k/skate_phantom_flex_4k.m3u8"; // HLS file
 
 if (Hls.isSupported()) {
     var hls = new Hls();
-    hls.loadSource(videoSrc);
-    hls.attachMedia(video);
+    if(false /*hls.loadSource(videoSrc)!=undefined*/){ //link is blocked
+        hls.attachMedia(video);
+    }else{
+        video.src="resources/test-series/cat.mp4";
+    };
+    
 }
 
 //questo fatto ogni tick? possibile evitare?
