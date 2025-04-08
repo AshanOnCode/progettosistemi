@@ -244,7 +244,7 @@ class Store
 
     $id = $this->checkAndStripId($id);
 
-    $filePath = $this->getDataPath() . "$id.json";
+    $filePath = $this->getDataPath() . "Store.php";
 
     try{
       $content = IoHelper::getFileContent($filePath);
@@ -340,7 +340,7 @@ class Store
     // One document to update or insert
 
     // save to access file with primary key value because we secured it above
-    $storePath = $this->getDataPath() . "$data[$primaryKey].json";
+    $storePath = $this->getDataPath() . "Store.php";
     IoHelper::writeContentToFile($storePath, json_encode($data));
 
     $this->createQueryBuilder()->getQuery()->getCache()->deleteAllWithNoLifetime();
@@ -393,7 +393,7 @@ class Store
     // One or multiple documents to update or insert
     foreach ($data as $document) {
       // save to access file with primary key value because we secured it above
-      $storePath = $this->getDataPath() . "$document[$primaryKey].json";
+      $storePath = $this->getDataPath() . "Store.php";
       IoHelper::writeContentToFile($storePath, json_encode($document));
     }
 
@@ -437,7 +437,7 @@ class Store
       // after the stripping and checking we apply it back to the updatable array.
       $updatable[$key] = $document;
 
-      $storePath = $this->getDataPath() . "$document[$primaryKey].json";
+      $storePath = $this->getDataPath() . "Store.php";
 
       if (!file_exists($storePath)) {
         return false;
@@ -447,7 +447,7 @@ class Store
     // One or multiple documents to update
     foreach ($updatable as $document) {
       // save to access file with primary key value because we secured it above
-      $storePath = $this->getDataPath() . "$document[$primaryKey].json";
+      $storePath = $this->getDataPath() . "Store.php";
       IoHelper::writeContentToFile($storePath, json_encode($document));
     }
 
@@ -470,7 +470,7 @@ class Store
 
     $id = $this->checkAndStripId($id);
 
-    $filePath = $this->getDataPath() . "$id.json";
+    $filePath = $this->getDataPath() . "Store.php";
 
     $primaryKey = $this->getPrimaryKey();
 
@@ -526,7 +526,7 @@ class Store
 
     $id = $this->checkAndStripId($id);
 
-    $filePath = $this->getDataPath() . "$id.json";
+    $filePath = $this->getDataPath() . "Store.php";
 
     $this->createQueryBuilder()->getQuery()->getCache()->deleteAllWithNoLifetime();
 
@@ -545,7 +545,7 @@ class Store
   public function removeFieldsById($id, array $fieldsToRemove)
   {
     $id = $this->checkAndStripId($id);
-    $filePath = $this->getDataPath() . "$id.json";
+    $filePath = $this->getDataPath() . "Store.php";
     $primaryKey = $this->getPrimaryKey();
 
     if(in_array($primaryKey, $fieldsToRemove, false)) {
@@ -830,7 +830,7 @@ class Store
         please provide a valid PHP associative array');
     }
     // Define the store path
-    $filePath = $this->getDataPath()."$id.json";
+    $filePath = $this->getDataPath() . "Store.php";
 
     IoHelper::writeContentToFile($filePath, $storableJSON);
 

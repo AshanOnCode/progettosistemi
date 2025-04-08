@@ -164,7 +164,7 @@ class Cache
    */
   public function delete(): bool
   {
-    return IoHelper::deleteFiles(glob($this->getCachePath().$this->getToken()."*.json"));
+    return IoHelper::deleteFiles(glob($this->getCachePath() . $this->getToken() ."*.json"));
   }
 
   /**
