@@ -19,10 +19,11 @@ if (Hls.isSupported()) {
 function togglePlay() {
     if (video.paused) {
         video.play();
-        playPauseBtn.textContent = '⏸️';
+        console.log(playPauseBtn);
+        playPauseBtn.innerHTML = '<img src="resources/icons/pause.png" alt="play-icon" class="player-icons"></img>';
     } else {
         video.pause();
-        playPauseBtn.textContent = '▶️';
+        playPauseBtn.innerHTML = '<img src="resources/icons/play.png" alt="play-icon" class="player-icons"></img>';
     }
 }
 

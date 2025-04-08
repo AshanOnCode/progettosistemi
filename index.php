@@ -13,11 +13,9 @@
 
 <div class="video-container">
   <video id="video"></video> 
-
   <div class="controls">
     <!-- range audio e progressBar invertiti -->
-    <button id="play-pause" class="icon">▶️</button>
-    
+    <button id="play-pause" class="icon"><img src="resources/icons/play.png" alt="play-icon" class="player-icons"></button>
     <!-- TODO: opzioni player
       1) div as progress+input (se sistemabile)
       2) default browser player -->
@@ -31,8 +29,6 @@
     <button id="fullscreen" class="icon">⛶</button>
   </div>
 </div>
-
-<div><p>Hello world!</p></div>
 
 <!-- <script src="scripts/videoLoader.js"></script> -->
 <script src="scripts/script.js"></script>
