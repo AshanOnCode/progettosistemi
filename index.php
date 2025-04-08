@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Progetto</title>
-    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="styles/index.css">
 </head>
 <body>
     <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
@@ -28,6 +28,6 @@
 
         </div>
     </div>
-    <script src="Video.js"></script>
+    <script src="scripts/videoLoader.js"></script>
 </body>
 </html>
