@@ -11,12 +11,11 @@ var videoSrc = "http://sample.vodobox.net/skate_phantom_flex_4k/skate_phantom_fl
 
 if (Hls.isSupported()) {
     var hls = new Hls();
-    if(true)//hls.loadSource(videoSrc)!=undefined){ //link is blocked
+    if(false){//hls.loadSource(videoSrc)!=undefined){ //link is blocked
         hls.attachMedia(video);
     }else{
-        video.src ="../resources/test-series/ep1.mp4";
-    };
-    
+        video.src = "resources/test-series/ep1.mp4";
+    }   
 }
 
 //questo fatto ogni tick? possibile evitare?

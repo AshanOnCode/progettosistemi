@@ -1,49 +1,64 @@
 body {
+    height: 100vh;
+    margin: 0;
+
     background: var(--bg-color);
     color: var(--text-color);
+
     font-family: karla;
     font-weight: 300;
     font-size: .875rem; 
+
     /* TODO: assegnare classe per ogni attributo?
     necessario? (es: .light .bold .font1 .font2)*/
 
-    /* centering hell */
-    margin: 0;
+    /* centering hell 
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
+    align-items: center;*/
+    
 }
 
 
 .container{
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+
     border: 1px solid var(--devider-color);
-    margin: 20px;
+    
 }
 
 .top-div{
+    height: 50%;
+
     border: 1px solid var(--devider-color);
     display: flex;
 }
 
 .video-div{
+    width: 80%;
     border: 1px solid var(--devider-color);
 }
 
 .epList-div{
+    width: 20%;
     border: 1px solid var(--devider-color);
 }
 
 .bottom-div{
+    height: 50%;
     border: 1px solid var(--devider-color);
     display: flex;
 }
 
 .detailes-div{
+    width: 50%;
     border: 1px solid var(--devider-color);
 }
 
 .seasonList-div{
+    width: 50%;
     border: 1px solid var(--devider-color);
 }
 
