@@ -10,6 +10,10 @@
         login_redirect();
     }
 
+    if(isset($_SESSION["title"])){
+        echo " ".$_SESSION["title"];
+    }
+
 ?>
 
 <!DOCTYPE html>
