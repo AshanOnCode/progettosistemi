@@ -14,8 +14,6 @@
         log_out();  // Call your log_out function
         login_redirect();  // Redirect the user after logging out
     }
-
-    uploadVideo("ciao", "ada", "2");
 ?>
 
 <!DOCTYPE html>
