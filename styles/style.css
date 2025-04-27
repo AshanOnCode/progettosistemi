@@ -4,6 +4,7 @@ body {
 
     background: var(--bg-color);
     color: var(--text-color);
+
     font-family: karla;
     font-weight: 300;
     font-size: .875rem;
