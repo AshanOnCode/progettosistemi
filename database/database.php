@@ -1,6 +1,5 @@
 <?php
-    require_once('vendor/autoload.php');
-
+require_once "src/Store.php";
     use SleekDB\Store;
 
     $configuration = [
