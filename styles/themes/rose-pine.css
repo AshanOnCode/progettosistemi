@@ -16,6 +16,9 @@
     --third-color: #9ccfd8;
     --fourth-color: #c4a7e7;
     --highlight-low-color: #21202e;
+    --highlight-low-color-transparent: rgba(33, 32, 46, 0.96);
+    backdrop-filter: blur(10px); /* applica il blur */
+    -webkit-backdrop-filter: blur(100px);
     --highlight-med-color: #403d52;
     --devider-color: #524f67;
 }

@@ -4,11 +4,13 @@
     require_once "database.php";
 
     function log_out() {
-        $_SESSION["email"] = "";
+        session_unset();
+        session_destroy();
+        session_start();
     }
 
     function login_redirect() {
-        if ($_SESSION["email"] === "") {
+        if(!isset($_SESSION["email"])){
             header("Location: login.php");
             exit();
         }
