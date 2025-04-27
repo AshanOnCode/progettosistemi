@@ -1,5 +1,5 @@
 <?php
-    require_once "database/functions.php";
+    require_once "functions.php";
 
     // Display the email stored in session (if logged in)
     echo $_SESSION["username"]."\n";

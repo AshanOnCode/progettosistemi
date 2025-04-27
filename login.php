@@ -1,6 +1,6 @@
 <?php
 
-    require_once "database/functions.php";
+    require_once "functions.php";
 
     if (isset($_SESSION['message'])) {
         unset($_SESSION['message']);
