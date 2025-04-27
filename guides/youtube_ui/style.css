@@ -1,0 +1,60 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Main container */
+.container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+/* Left column containing video player and comments */
+.left-column {
+    flex: 2; /* Video player and comments section take more space */
+    display: flex;
+    flex-direction: column; /* Stack video and comments vertically */
+    gap: 20px; /* Add spacing between the video and comments */
+}
+
+/* Player container styling */
+.player-container {
+    width: 100%; /* Make sure it takes full width */
+}
+
+/* Comments section styling */
+.comment-container {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+/* Suggestions section styling */
+.suggestions-container {
+    flex: 1; /* Suggestions take up the remaining space */
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.suggestions-container ul {
+    list-style-type: none;
+}
+
+.suggestions-container li {
+    margin-bottom: 10px;
+}
+
+.suggestions-container a {
+    text-decoration: none;
+    color: #0066cc;
+}
+
+.suggestions-container a:hover {
+    text-decoration: underline;
+}

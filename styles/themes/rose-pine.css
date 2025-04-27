@@ -1,0 +1,21 @@
+/* font: karla */
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@200..800&display=swap');
+
+:root {
+    /* documentation: https://rosepinetheme.com/palette */
+    --bg-color: #191724;
+    --surface-color: #1f1d2e;
+    --overlay-color: #26233a;
+    --muted-color: #26233a;
+    --subtle-color: #908caa;
+    --text-color: #e0def4;
+    --error-color: #eb6f92;
+    --warn-color: #f6c177;
+    --main-color: #ebbcba;
+    --second-color: #31748f;
+    --third-color: #9ccfd8;
+    --fourth-color: #c4a7e7;
+    --highlight-low-color: #21202e;
+    --highlight-med-color: #403d52;
+    --devider-color: #524f67;
+}
