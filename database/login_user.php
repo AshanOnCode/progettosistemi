@@ -3,6 +3,46 @@
     // Funzione per il login dell'utente
     require_once "database.php";
 
+    function log_out() {
+        $_SESSION["email"] = "";
+    }
+
+    function login_redirect() {
+        if ($_SESSION["email"] === "") {
+            header("Location: login.php");
+            exit();
+        }
+    }
+
+    function attemptLogin(){
+        
+        $message = "";
+        $email = "";
+
+        if (isset($_POST['email']) && isset($_POST['password'])) {
+            $email = $_POST['email'];
+            $password = $_POST['password'];
+        
+            $message = loginUser($email, $password);
+        }
+
+        if($message === "Login effettuato con successo!"){
+            global $usersStore;
+            header("Location: home.php");
+
+            $user = $usersStore->findOneBy(["email", "=", $email]);
+
+            $_SESSION["email"] = $email;
+            $_SESSION["username"] = $user["username"];
+            $message = "";
+            exit();
+        }
+
+        $_SESSION["message"] = $message;
+
+    }
+
+
     function loginUser($email, $password) {
         global $usersStore;
 
@@ -12,13 +52,11 @@
         if ($user) {
             // Verifica se la password è corretta
             if (password_verify($password, $user['password'])) {
-                echo "Login effettuato con successo!";
+                return "Login effettuato con successo!";
             } else {
-                echo "Password errata!";
+                return "Password errata!";
             }
         } else {
-            echo "Utente non trovato!";
+            return "Utente non trovato!";
         }
     }
-
-    loginUser("alespa20075@gmail.com", "pippo123");

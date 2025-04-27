@@ -2,27 +2,47 @@
 
     require_once "database.php";
 
-    // Esempio di registrazione
-    registerUser('ale', 'alespa20075@gmail.com', 'pippo123');
+    function attemptRegister(){
+        
+        $message = "";
+
+        if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['password'])) {
+            $username = $_POST['username'];
+            $email = $_POST['email'];
+            $password = $_POST['password'];
+        
+            $message = registerUser($username, $email, $password);
+        }
+
+        if($message == "Utente registrato con successo!"){
+            header("Location: login.php");
+            exit();
+        }
+
+        $_SESSION["message"] = $message;
+
+    }
 
     function registerUser($username, $email, $password) {
             global $usersStore;
             
+            if($username == ""|| $email == ""|| $password == ""){
+                return "Completare tutti i campi";
+            }
+
             // Hash della password 
             $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
             $user = $usersStore->findOneBy(["username", "=", $username]);
 
             if ($user != null) {
-                echo "Nome utente già registrato!";
-                return false;
+                return "Nome utente già registrato!";
             }
 
             $user = $usersStore->findOneBy(["email", "=", $email]);
 
             if ($user != null) {
-                echo "Email già utilizzata!";
-                return false;
+                return "Email già utilizzata!";
             }
 
             try {
@@ -32,10 +52,8 @@
                     'email' => $email,
                     'password' => $hashedPassword
                 ]);
-                echo "Utente registrato con successo!";
+                return "Utente registrato con successo!";
             } catch (\Throwable $th) {
-                echo $th->getMessage();
+                return "Errore";
             }
-        
-            return true;
         }
