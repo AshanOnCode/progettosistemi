@@ -2,7 +2,7 @@
     $images = [];
     for ($i = 0; $i < 10; $i++) {
         // Usa la tua funzione per ottenere i percorsi
-        $images[] = print_image_path($i);
+        $images[$i] = print_image_path($i);
     }
 ?>
 
