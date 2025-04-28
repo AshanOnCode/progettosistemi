@@ -103,6 +103,19 @@
            
         }
     }
+
+    function getCover(){
+        var coverImage = document.getElementsByClassName('coverImg');
+
+        for (let i = 0; i < coverImage.length; i++) {
+            const element = coverImage[i];
+            
+            element.alt = `res/<?php echo $path?>/cover.jpg`;
+            element.src = `res/<?php echo $path?>/cover.jpg`;
+            
+            console.log(`res/<?php echo $path?>/cover.jpg`);
+        }
+    }
     
   </script>
  

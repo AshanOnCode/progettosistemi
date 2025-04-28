@@ -65,6 +65,35 @@ header h1{
 }  
 
 
+#login_window {
+    display: none;
+    position: fixed;
+    margin-top: 50px;
+    z-index: 1000;
+    background-color: var(--highlight-low-color-transparent);
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+    padding: 25px;
+    width: 50%;
+    height: 50%;
+    max-width: 600px; 
+    max-height: 400px;
+    border-radius: 25px; 
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+
+#login img{
+    cursor: pointer;    
+}
+
+.home_button{
+    cursor: pointer; 
+}
+
 .container {
     padding: 1%;
     height: 100%;
@@ -124,7 +153,8 @@ epList-div li {
 }
 
 .coverImg {
-    height: 40vh;
+    width: 300px;
+    height: 500px;
     border-radius: 10px;
     margin-right: 10px;
 }
@@ -137,9 +167,17 @@ epList-div li {
     /*for anchoring child elements*/
 }
 
-.info-div h1 {
+.title{
     margin: 2px;
     font-size: 40px;
+}
+
+form {
+    padding: 20px;
+}
+
+.title p{
+    margin: 0;
 }
 
 .tag-list {
@@ -179,7 +217,8 @@ epList-div li {
 
 .data1,
 .data2 {
-    width: 50%
+    width: 50%;
+    margin-bottom: 20px;
 }
 
 .dati-div h5 {

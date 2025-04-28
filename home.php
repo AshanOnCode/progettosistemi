@@ -4,6 +4,7 @@
     if(isset($_POST["logout"])) {
         log_out();
     }
+    log_out();
 ?>
 
 <!DOCTYPE html>
@@ -59,7 +60,7 @@
     <div class="container">
         
         <header>
-            <h1>OpenTube</h1>
+            <h1 class = "home_button" >OpenTube</h1>
             <div id="login">
                 <img src="res/ui/user.png" alt="dadaw">
                 <button
@@ -85,8 +86,6 @@
             
         </header>
     
-        <script src="scripts/login_button.js"></script>
-
         <div id="main">
             <h1>
                 Benvenuto su OpenTube
@@ -139,5 +138,7 @@
         //     scrollableDiv.scrollLeft += e.deltaY;
         // });
     </script>
+    <script src="scripts/login_button.js"></script>
+    <script src="scripts/home_button.js"></script>
 </body>
 </html>
