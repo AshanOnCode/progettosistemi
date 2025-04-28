@@ -127,6 +127,9 @@
       getTagList();
       getStudio();
   </script>
+  <script type="text/javascript">
+    var list = document.getElementsById('epList');
+  </script>
 </body>
 
 </html>

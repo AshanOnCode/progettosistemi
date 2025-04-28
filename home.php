@@ -93,7 +93,7 @@
             </h1>
         </div>
 
-        <div id="series-container">
+        <div class="series-container">
             <div>
                 <h1>Continua a guardare</h1>
             </div>
@@ -103,7 +103,7 @@
         </div>
         
 
-        <div id="series-container">
+        <div class="series-container">
             <div>
                 <h1>Serie consigliate</h1>
             </div>
@@ -111,11 +111,11 @@
             </div>           
         </div>
 
-        <div id="series-container">
+        <div class="series-container">
             <div>
                 <h1>Film consigliati</h1>
             </div>
-            <div class="scroll-box">
+            <div class="scroll-box" id="test">
             </div>           
         </div>
     </div>
@@ -124,6 +124,20 @@
     
     <script>
         generaTabellaSerie();
+
+        // make series-container scroll horizontally
+        // const containers = document.getElementsByClassName('scroll-box');
+        // containers.array.forEach(container => {
+        //     container.addEventListener('wheel', function(e) {
+        //         e.preventDefault();
+        //         scrollableDiv.scrollLeft += e.deltaY;
+        //     });
+        // });
+        // const container = document.getElementsByClassName('test');
+        // container.addEventListener('wheel', function(e) {
+        //     e.preventDefault();
+        //     scrollableDiv.scrollLeft += e.deltaY;
+        // });
     </script>
 </body>
 </html>
