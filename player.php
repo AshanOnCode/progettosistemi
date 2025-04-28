@@ -1,9 +1,5 @@
 <?php
 require_once "functions.php";
-
-if (isset($_POST["logout"])) {
-  log_out();
-}
 ?>
 
 <!DOCTYPE html>
@@ -16,6 +12,7 @@ if (isset($_POST["logout"])) {
   <link rel="stylesheet" href="styles/themes/rose-pine.css">
   <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
   <?php include "database/video_script.php" ?>
+  <?php include "database/episode_list.php" ?>
 </head>
 
 <body>
@@ -23,42 +20,40 @@ if (isset($_POST["logout"])) {
   <div id="login_window">
 
     <div>
-      <h1>Login window</h1>
+        <h1>Login window</h1>
     </div>
 
-    <div id="form">
-      <!-- Form di login -->
-      <form method="POST" action="home.php">
+
+    <form method="POST" action="home.php">
         <div>
-          <label for="email">Email:</label>
-          <input type="email" name="email" id="email">
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email">
         </div>
 
         <div>
-          <label for="password">Password:</label>
-          <input type="password" name="password" id="password">
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password">
         </div>
 
         <div>
-          <button type="submit">Accedi</button>
+            <button type="submit">Accedi</button>
         </div>
 
         <p>
-          <?php
-          attemptLogin();
-          echo $_SESSION["message"];
-          ?>
+            <?php
+            attemptLogin();
+            echo $_SESSION["message"];
+            ?>
         </p>
 
-      </form>
-    </div>
+    </form>
+
+    <button class="register">Registrati</button>
 
   </div>
 
 
   <div class="container">
-
-
     <header>
       <h1 class="home_button">OpenTube</h1>
       <div id="login">
@@ -91,20 +86,9 @@ if (isset($_POST["logout"])) {
         <video id="video" controls></video>
       </div>
 
-      <ul class="epList" id="epList">
-        <!-- <li class="active">
-          <span class="icon">&#9654;</span>
-          <span class="text">title ep 1</span>
-        </li>
-        <li>
-          <span class="icon">2.</span>
-          <span class="text">title ep 2</span>
-        </li>
-        <li>
-          <span class="icon">3.</span>
-          <span class="text">title ep 3</span>
-        </li> -->
-      </ul>
+      <div class="scroll-box">
+
+      </div>
     </div>
 
 
@@ -112,7 +96,7 @@ if (isset($_POST["logout"])) {
     <div class="bottom-div">
       <div class="detailes-div">
         <img class="coverImg" src="" alt="cover_image">
-        
+
         <div class="info-div">
 
           <h1 class="title"></h1>
@@ -120,7 +104,7 @@ if (isset($_POST["logout"])) {
           <ul class="tag-list"></ul>
 
           <p class="description"></p>
-            
+
           <div class="dati-div">
 
             <div class="data1">
@@ -138,40 +122,16 @@ if (isset($_POST["logout"])) {
         </div>
 
       </div>
-
-      <div class="seasonList-div">
-        <ul>
-          <li><a>Season 1</a></li>
-          <li><a>Season 2</a></li>
-          <li><a>Season 4</a></li>
-          <li><a>Season 5</a></li>
-        </ul>
-      </div>
     </div>
   </div>
-  <script type="text/javascript">
-    const list = document.getElementById('epList');
-    var content = ""; var lenght = 4; var listEl;
-    for (var i = 0; i < lenght; i++) {
-      content += '<li><span class="icon">' + (i + 1) + '</span><span class="text">title ep 1</span></li >';
-    }
-    list.innerHTML = content;
-  </script>
-  
+
   <script src="scripts/login_button.js"></script>
   <script src="scripts/home_button.js"></script>
-  <script type="text/javascript">
-    var list = document.getElementsById('epList');
-  </script>
+  <script src="scripts/register_button.js"></script>
   <script>
-    getVideo();
-    getTitle();
-    getDescription();
-    getTagList();
-    getStudio();
-    getCover();
+    initializePage();
+    generaEp();
   </script>
-  
 </body>
 
 </html>

@@ -116,6 +116,15 @@
             console.log(`res/<?php echo $path?>/cover.jpg`);
         }
     }
+
+    function initializePage() {
+        getVideo();
+        getTitle();
+        getDescription();
+        getTagList();
+        getStudio();
+        getCover();
+    }
     
   </script>
  
