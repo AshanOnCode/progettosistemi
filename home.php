@@ -15,8 +15,11 @@
     <title>Home</title>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/themes/rose-pine.css">
+    <?php include "database/serie_dati.php";?>
 </head>
 <body>
+    
+
     <div id="login_window">
 
         <div>
@@ -90,20 +93,38 @@
                 Benvenuto su OpenTube
             </h1>
         </div>
-        
-        <p>
-        
-        </p>
+
+        <div id="series-container">
+            <div>
+                <h1>Continua a guardare</h1>
+            </div>
+            <div class="scroll-box">
+                
+            </div>           
+        </div>
         
 
-        <!-- Form for logout -->
-        <form method="POST" action="home.php">
+        <div id="series-container">
             <div>
-                <button type="submit" name="logout" >Logout</button>
+                <h1>Serie consigliate</h1>
             </div>
-        </form>
+            <div class="scroll-box">
+            </div>           
+        </div>
+
+        <div id="series-container">
+            <div>
+                <h1>Film consigliati</h1>
+            </div>
+            <div class="scroll-box">
+            </div>           
+        </div>
     </div>
 
     <div id="place_holder"></div>
+    
+    <script>
+        generaTabellaSerie();
+    </script>
 </body>
 </html>

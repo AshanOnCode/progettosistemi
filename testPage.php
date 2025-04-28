@@ -69,7 +69,7 @@
   </div>
   <script>
     const video = document.getElementById('video');
-    const videoSrc = 'resources/betty_in_blunderlands/betty_in_blunderLand.m3u8';
+    const videoSrc = 'res/Betty_in_Blunderland/1/betty_in_blunderLand.m3u8';
     if (Hls.isSupported()) {
       const hls = new Hls();
       hls.loadSource(videoSrc);
@@ -87,7 +87,6 @@
       alert('Formato video non supportato su Chrome, utilizzare Firefox o Safari');
     }
   </script>
-  <script src="scripts/script.js"></script>
 </body>
 
 </html>

@@ -60,7 +60,7 @@ header {
     background-image: 
         linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)),  /* gradiente sopra */
         linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)), /* gradiente sotto */
-        url('/progettosistemi/progettosistemi/res/ui/popeye.jpg'); /* immagine di sfondo */
+        url('/res/ui/popeye.jpg'); /* immagine di sfondo */
     background-size: cover; /* fa sì che l'immagine copra l'intero elemento */
     background-position: center; /* centra l'immagine */
     background-repeat: no-repeat; /* impedisce la ripetizione dell'immagine */
@@ -113,6 +113,47 @@ header {
     background-color: black;
 }
 
+.scroll-box{
+    overflow-x: scroll;
+    width: 100%;
+    height: 250px;
+    display: flex;
+}
+
+#series-container{
+    border-radius: 10px;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: var(--highlight-low-color);
+}
+
+#series-container h1{
+    margin: 20px;
+}
+
+
+
+#serie-button{
+    transition: ease-in 0.1s;
+    border: 0px;
+    border-radius: 10px;
+    margin:20px;
+    height:210px;
+    width: 373px;
+    background-color: black;
+    flex-shrink: 0;
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+}
+
+#serie-button:hover{
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+    margin:0;
+    transition: ease-in 0.1s;
+    height:230px;
+    width: 420px;
+}
 
 header img{
    height: 40px;
