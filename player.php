@@ -4,12 +4,39 @@
 <head>
   <meta charset="UTF-8">
   <title>Custom Video Player</title>
-  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="styles/player.css">
   <link rel="stylesheet" href="styles/themes/rose-pine.css">
   <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 </head>
 
 <body>
+
+  <header>
+    <h1>OpenTube</h1>
+    <div id="login">
+      <img src="res/ui/user.png" alt="dadaw">
+      <button <?php
+      if (isset($_SESSION['username'])) {
+        echo "id='profile_button'";
+      } else {
+        echo "id='login_button'";
+      }
+      ?>>
+        <h1>
+          <?php
+          if (isset($_SESSION['username'])) {
+            echo $_SESSION['username'];
+          } else {
+            echo "Login";
+          }
+          ?>
+        </h1>
+      </button>
+    </div>
+  </header>
+
+
+
   <div class="container">
     <div class="top-div">
       <div class="video-div">
@@ -69,7 +96,7 @@
     const video = document.getElementById('video');
 
     const videoSrc = 'res/Betty_in_Blunderland/1/betty_in_blunderlands.m3u8';
-    
+
     if (Hls.isSupported()) {
       const hls = new Hls();
       hls.loadSource(videoSrc);
@@ -84,11 +111,12 @@
   </script>
   <script type="text/javascript">
     const list = document.getElementById('epList');
-    var content="";var lenght = 4; var listEl;
+    var content = ""; var lenght = 4; var listEl;
     for (var i = 0; i < lenght; i++) {
-      content += '<li><span class="icon">'+(i+1)+'</span><span class="text">title ep 1</span></li >';
+      content += '<li><span class="icon">' + (i + 1) + '</span><span class="text">title ep 1</span></li >';
     }
     list.innerHTML = content;
   </script>
 </body>
+
 </html>
