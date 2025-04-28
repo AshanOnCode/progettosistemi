@@ -22,7 +22,7 @@
                 button.id = 'serie-button';
 
                 button.addEventListener("click", () => {
-                    window.location.href = `testPage.php?title=${images[i].replace("/img.jpg", "").replace("res/", "")}`;
+                    window.location.href = `player.php?title=${images[i].replace("/img.jpg", "").replace("res/", "")}`;
                 });
 
                 element.appendChild(button); 
