@@ -15,7 +15,6 @@ body {
     */
 }
 
-
 header {
     position: fixed; /* cambia questo */
     top: 20px; /* attaccato in alto */
@@ -32,7 +31,7 @@ header {
     display: flex;
     justify-content: space-between;
     background-color: var(--highlight-low-color-transparent);
-    backdrop-filter: blur(3px); /* applica il blur */
+    backdrop-filter: blur(7px); /* applica il blur */
     -webkit-backdrop-filter: blur(10px);
 
     border-radius: 25px;
@@ -130,7 +129,6 @@ header {
 #series-container h1{
     margin: 20px;
 }
-
 
 
 #serie-button{

@@ -8,26 +8,25 @@
 
 <script>
     function generaTabellaSerie() {
-    var images = <?php echo json_encode($images) ?>;
-    var containers = document.getElementsByClassName('scroll-box');
+        var images = <?php echo json_encode($images) ?>;
+        var containers = document.getElementsByClassName('scroll-box');
 
-    for (let index = 0; index < containers.length; index++) {
-        const element = containers[index];
-        
-        for (let i = 0; i <= 9; i++) {
+        for (let index = 0; index < containers.length; index++) {
+            const element = containers[index];
 
-            const button = document.createElement('button');
+            for (let i = 0; i <= 9; i++) {
 
-            button.style.backgroundImage = `url(${images[i]})`;
-            button.id = 'serie-button';
+                const button = document.createElement('button');
 
-            button.addEventListener("click", () => {
-                window.location.href = `testPage.php?img=${images[i].replace("/img.jpg", "")}`;
-            });
+                button.style.backgroundImage = `url(${images[i]})`;
+                button.id = 'serie-button';
 
-            element.appendChild(button); // Corrected this line
+                button.addEventListener("click", () => {
+                    window.location.href = `testPage.php?title=${images[i].replace("/img.jpg", "").replace("res/", "")}`;
+                });
+
+                element.appendChild(button); 
+            }
         }
     }
-}
-
 </script>
