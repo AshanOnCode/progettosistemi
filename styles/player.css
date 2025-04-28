@@ -16,14 +16,14 @@ body {
 }
 
 header {
-    position: fixed; /* cambia questo */
-    top: 20px; /* attaccato in alto */
-    left: 20px; /* partenza a sinistra */
-    right: 20px; /* esteso a destra */
-    z-index: 100; /* sta sopra agli altri */
+    position: fixed; 
+    top: 20px; 
+    left: 20px; 
+    right: 20px; 
+    z-index: 100; 
 
 
-    padding: 1%; /* Spazio interno: dentro al box */
+    padding: 1%;
     text-align: center;
     height: 70px;
     color: white;
@@ -31,13 +31,34 @@ header {
     display: flex;
     justify-content: space-between;
     background-color: var(--highlight-low-color-transparent);
-    backdrop-filter: blur(7px); /* applica il blur */
+    backdrop-filter: blur(7px);
     -webkit-backdrop-filter: blur(10px);
 
     border-radius: 25px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
 }
 
+form {
+    margin: 10px;
+    font-size: 16px;
+    width: 80%;
+    height: 55%;
+    min-height: 150x;
+    margin: auto;
+    background: var(--overlay-color);
+    border-radius: 8px;
+}
+
+form input {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
 
 header img{
     height: 40px;
@@ -64,13 +85,95 @@ header h1{
     align-items: center;
 }  
 
+#login_window {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    z-index: 1000;
+    padding: 8%;
+    
+    background-color: var(--bg-color);
+    border: 5px solid var(--highlight-low-color);
+    border-radius: 10px;
+}
+
+#login_window h1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 7%;
+}
+
+.register {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    
+    margin: 7%;
+    padding: 13px;
+}
+
+.scroll-box{
+    overflow-x: hidden;
+    overflow-y: scroll;
+    width: 30%;
+    margin-right: 40px;
+    height: 70vh;
+}
+
+.series-container{
+    border-radius: 10px;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: var(--highlight-low-color);
+}
+
+.series-container h1{
+    margin: 20px;
+}
+
+#serie-button{
+    font-size: large;
+    font-weight: bold;
+    transition: ease-in 0.1s;
+    border: 0px;
+    border-radius: 10px;
+    margin:5%;
+    height:190px;
+    width: 71%;
+    flex-shrink: 0;
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-color: var(--highlight-low-color);
+    color: white;
+}
+
+#serie-button:hover{
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+    margin:5%;
+    transition: ease-in 0.1s;
+    height:200px;
+    width: 75%;
+}
+
+
+#login img{
+    cursor: pointer;    
+}
+
+.home_button{
+    cursor: pointer; 
+}
 
 .container {
     padding: 1%;
     height: 100%;
     width: 98%;
     margin-top: 2vh;
-    /*Adjust whith header*/
     margin-left: 1%;
     margin-right: 1%;
 }
@@ -124,7 +227,8 @@ epList-div li {
 }
 
 .coverImg {
-    height: 40vh;
+    width: 300px;
+    height: 500px;
     border-radius: 10px;
     margin-right: 10px;
 }
@@ -134,12 +238,42 @@ epList-div li {
     margin-left: 10px;
     margin-right: 10px;
     position: relative;
-    /*for anchoring child elements*/
 }
 
-.info-div h1 {
+.title{
     margin: 2px;
     font-size: 40px;
+}
+
+form {
+    width: 60%;
+    height: 55%;
+    min-height: 150px;
+
+    margin: auto;
+    padding: 50px;
+    
+    font-size: 16px;
+    background: var(--overlay-color);
+    border-radius: 8px;
+}
+
+form input {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    padding: 5px;
+    
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    
+    transition: border-color 0.3s;
+}
+
+
+.title p{
+    margin: 0;
 }
 
 .tag-list {
@@ -179,7 +313,8 @@ epList-div li {
 
 .data1,
 .data2 {
-    width: 50%
+    width: 50%;
+    margin-bottom: 20px;
 }
 
 .dati-div h5 {

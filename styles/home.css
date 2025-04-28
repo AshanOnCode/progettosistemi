@@ -1,162 +1,234 @@
+
 body {
     margin: 0;
     width: 100vw;
-
+    
     background: var(--bg-color);
     color: var(--text-color);
-
+    
     font-family: karla;
     font-weight: 300;
-    font-size: .875rem;
-
-    /* centering
-    justify-content: center;
-    align-items: center;
-    */
+    font-size: 0.875rem;
 }
 
+
 header {
-    position: fixed; /* cambia questo */
-    top: 20px; /* attaccato in alto */
-    left: 20px; /* partenza a sinistra */
-    right: 20px; /* esteso a destra */
-    z-index: 100; /* sta sopra agli altri */
-
-
-    padding: 1%; /* Spazio interno: dentro al box */
-    text-align: center;
-    height: 70px;
-    color: white;
-    align-items: center;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    z-index: 100;
+    
     display: flex;
+    align-items: center;
     justify-content: space-between;
+    
+    padding: 1%;
+    height: 70px;
+    text-align: center;
+    color: white;
+    
     background-color: var(--highlight-low-color-transparent);
-    backdrop-filter: blur(7px); /* applica il blur */
+    backdrop-filter: blur(7px);
     -webkit-backdrop-filter: blur(10px);
 
     border-radius: 25px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-.container{
-    margin: 25px; 
+header img {
+    height: 40px;
+}
+
+header h1 {
+    margin-left: 4%;
+}
+
+
+.container {
+    margin: 25px;
     padding: 1%;
 }
 
+
 #login {
-    margin-right: 4%;
     position: relative;
     right: 0;
+    
+    margin-right: 4%;
     display: flex;
     align-items: center;
-}  
+}
+
+#login img {
+    cursor: pointer;
+}
+
+#login button {
+    margin-left: 5px;
+    color: white;
+    border-color: transparent;
+    background-color: transparent;
+    
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+#login_window {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    z-index: 1000;
+    padding: 8%;
+    
+    background-color: var(--bg-color);
+    border: 5px solid var(--highlight-low-color);
+    border-radius: 10px;
+}
+
+#profile_window {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    z-index: 1000;
+    padding: 8%;
+    
+    background-color: var(--bg-color);
+    border: 5px solid var(--highlight-low-color);
+    border-radius: 10px;
+}
+
+#login_window h1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 7%;
+}
+
+.register {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    
+    margin: 7%;
+    padding: 13px;
+}
+
 
 #main {
     margin-top: 110px;
     padding-top: 3%;
+
+    height: 50vh;
     border-radius: 25px;
-    align-items: center;
+    
     background-image: 
-        linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)),  
-        linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)), 
+        linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)),
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)),
         url('../res/ui/popeye.jpg');
     background-size: cover;
-    background-position: center; 
-    background-repeat: no-repeat; 
-    height: 50vh;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-#login_window {
-    display: none;
-    position: fixed;
-    margin-top: 50px;
-    z-index: 1000;
-    background-color: var(--highlight-low-color-transparent);
-    backdrop-filter: blur(3px);
-    -webkit-backdrop-filter: blur(10px);
-    padding: 25px;
-    width: 50%;
-    height: 50%;
-    max-width: 600px; 
-    max-height: 400px;
-    border-radius: 25px; 
-    top: 50%; 
-    left: 50%;
-    transform: translate(-50%, -50%); 
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
-}
-
-
-#login button{
-    margin-left: 5px;
-    color: white;
-    border-color: transparent;
-    background-color: transparent; 
-    cursor: pointer; 
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-#place_holder{
-    width: 100;
-    height: 200vh;
-}
-
-
-#main h1{
+#main h1 {
     font-size: 40px;
     margin-left: 4%;
 }
 
-#form {
-    padding: 20px;
-    background-color: black;
+
+#place_holder {
+    width: 1px;
+    height: 40vh;
 }
 
-.scroll-box{
+
+form {
+    width: 60%;
+    height: 55%;
+    min-height: 150px;
+
+    margin: auto;
+    padding: 50px;
+    
+    font-size: 16px;
+    background: var(--overlay-color);
+    border-radius: 8px;
+}
+
+form input {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    padding: 5px;
+    
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    
+    transition: border-color 0.3s;
+}
+
+
+.scroll-box {
     display: flex;
     overflow-x: scroll;
     overflow-y: hidden;
+    
     width: 100%;
 }
 
-.series-container{
-    border-radius: 10px;
+
+.series-container {
     margin-top: 20px;
     padding: 20px;
+
+    border-radius: 10px;
     background-color: var(--highlight-low-color);
 }
 
-.series-container h1{
+.series-container h1 {
     margin: 20px;
 }
 
 
-#serie-button{
-    transition: ease-in 0.1s;
-    border: 0px;
-    border-radius: 10px;
-    margin:20px;
-    height:210px;
+#serie-button {
+    margin: 20px;
+    
     width: 373px;
-    background-color: black;
+    height: 210px;
     flex-shrink: 0;
-    background-size: cover; 
-    background-position: center; 
-    background-repeat: no-repeat; 
-}
 
-#serie-button:hover{
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
-    margin:0;
+    border: 0;
+    border-radius: 10px;
+    
+    background-color: black;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
     transition: ease-in 0.1s;
-    height:230px;
+}
+
+#serie-button:hover {
+    margin: 0;
+    
     width: 420px;
+    height: 230px;
+    
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+    
+    transition: ease-in 0.1s;
 }
 
-header img{
-   height: 40px;
-}
-
-header h1{
-    margin-left: 4%;
+/* === HOME BUTTON === */
+.home_button {
+    cursor: pointer;
 }

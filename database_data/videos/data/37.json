@@ -1,1 +1,13 @@
-{"title":"Popeye the sailor","description":"Popeye and his adventures.","genres":["Musical","Family","Comedy"],"length":"4","studio":"Fleischer Studios","year":"1933-1934","_id":37}
+{
+  "title": "Popeye the sailor",
+  "description": "Popeye the Sailor introduces audiences to the iconic spinach-eating sailor who, with his rough voice, quick temper, and enormous forearms, quickly became a beloved figure in American pop culture. In this animated short, Popeye is caught in a rivalry with the brutish Bluto for the affection of the lanky and strong-willed Olive Oyl. Facing overwhelming odds, Popeye ultimately triumphs by consuming a can of spinach, a recurring symbol of his incredible strength and perseverance. The film combines slapstick humor, lively animation, and catchy musical numbers, setting the tone for decades of adventures that followed. Produced by Fleischer Studios and featuring a blend of action, comedy, and romance, 'Popeye the Sailor' marked the beginning of a legendary series that influenced generations of animation.",
+  "genres": [
+    "Musical",
+    "Family",
+    "Comedy"
+  ],
+  "length": "4",
+  "studio": "Fleischer Studios",
+  "year": "1933-1934",
+  "_id": 37
+}

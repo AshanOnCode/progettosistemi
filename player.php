@@ -1,9 +1,5 @@
 <?php
-    require_once "functions.php";
-
-    if(isset($_POST["logout"])) {
-        log_out();
-    }
+require_once "functions.php";
 ?>
 
 <!DOCTYPE html>
@@ -15,37 +11,72 @@
   <link rel="stylesheet" href="styles/player.css">
   <link rel="stylesheet" href="styles/themes/rose-pine.css">
   <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-  <?php include "database/video_script.php"?>
+  <?php include "database/video_script.php" ?>
+  <?php include "database/episode_list.php" ?>
 </head>
 
 <body>
 
-  <div class="container">
+  <div id="login_window">
 
-          
-        <header>
-          <h1>OpenTube</h1>
-          <div id="login">
-            <img src="res/ui/user.png" alt="dadaw">
-            <button <?php
+    <div>
+        <h1>Login window</h1>
+    </div>
+
+
+    <form method="POST" action="home.php">
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email">
+        </div>
+
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password">
+        </div>
+
+        <div>
+            <button type="submit">Accedi</button>
+        </div>
+
+        <p>
+            <?php
+            attemptLogin();
+            echo $_SESSION["message"];
+            ?>
+        </p>
+
+    </form>
+
+    <button class="register">Registrati</button>
+
+  </div>
+
+
+  <div class="container">
+    <header>
+      <h1 class="home_button">OpenTube</h1>
+      <div id="login">
+        <img src="res/ui/user.png" alt="dadaw">
+        <button <?php
+        if (isset($_SESSION['username'])) {
+          echo "id='profile_button'";
+        } else {
+          echo "id='login_button'";
+        }
+        ?>>
+          <h1>
+            <?php
             if (isset($_SESSION['username'])) {
-              echo "id='profile_button'";
+              echo $_SESSION['username'];
             } else {
-              echo "id='login_button'";
+              echo "Login";
             }
-            ?>>
-              <h1>
-                <?php
-                if (isset($_SESSION['username'])) {
-                  echo $_SESSION['username'];
-                } else {
-                  echo "Login";
-                }
-                ?>
-              </h1>
-            </button>
-          </div>
-        </header>
+            ?>
+          </h1>
+        </button>
+      </div>
+    </header>
 
 
 
@@ -55,27 +86,17 @@
         <video id="video" controls></video>
       </div>
 
-      <ul class="epList" id="epList">
-        <!-- <li class="active">
-          <span class="icon">&#9654;</span>
-          <span class="text">title ep 1</span>
-        </li>
-        <li>
-          <span class="icon">2.</span>
-          <span class="text">title ep 2</span>
-        </li>
-        <li>
-          <span class="icon">3.</span>
-          <span class="text">title ep 3</span>
-        </li> -->
-      </ul>
+      <div class="scroll-box">
+
+      </div>
     </div>
 
 
 
     <div class="bottom-div">
       <div class="detailes-div">
-        <img class="coverImg" src="resources/test-series/cover.png" alt="cover_image">
+        <img class="coverImg" src="" alt="cover_image">
+
         <div class="info-div">
 
           <h1 class="title"></h1>
@@ -83,7 +104,7 @@
           <ul class="tag-list"></ul>
 
           <p class="description"></p>
-            
+
           <div class="dati-div">
 
             <div class="data1">
@@ -101,34 +122,15 @@
         </div>
 
       </div>
-
-      <div class="seasonList-div">
-        <ul>
-          <li><a>Season 1</a></li>
-          <li><a>Season 2</a></li>
-          <li><a>Season 4</a></li>
-          <li><a>Season 5</a></li>
-        </ul>
-      </div>
     </div>
   </div>
-  <script type="text/javascript">
-    const list = document.getElementById('epList');
-    var content = ""; var lenght = 4; var listEl;
-    for (var i = 0; i < lenght; i++) {
-      content += '<li><span class="icon">' + (i + 1) + '</span><span class="text">title ep 1</span></li >';
-    }
-    list.innerHTML = content;
-  </script>
+
+  <script src="scripts/login_button.js"></script>
+  <script src="scripts/home_button.js"></script>
+  <script src="scripts/register_button.js"></script>
   <script>
-      getVideo();
-      getTitle();
-      getDescription();
-      getTagList();
-      getStudio();
-  </script>
-  <script type="text/javascript">
-    var list = document.getElementsById('epList');
+    initializePage();
+    generaEp();
   </script>
 </body>
 
