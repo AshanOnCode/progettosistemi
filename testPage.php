@@ -15,22 +15,20 @@
       <div class="video-div">
         <video id="video" controls></video>
       </div>
-      <div class="epList-div">
-        <ul>
-          <li class="active">
-            <span class="icon">&#9654;</span>
-            <span class="text">title ep 1</span>
-          </li>
-          <li>
-            <span class="icon">2.</span>
-            <span class="text">title ep 2</span>
-          </li>
-          <li>
-            <span class="icon">3.</span>
-            <span class="text">title ep 3</span>
-          </li>
-        </ul>
-      </div>
+      <ul class="epList" id="epList">
+        <!-- <li class="active">
+          <span class="icon">&#9654;</span>
+          <span class="text">title ep 1</span>
+        </li>
+        <li>
+          <span class="icon">2.</span>
+          <span class="text">title ep 2</span>
+        </li>
+        <li>
+          <span class="icon">3.</span>
+          <span class="text">title ep 3</span>
+        </li> -->
+      </ul>
     </div>
     <div class="bottom-div">
       <div class="detailes-div">
@@ -67,9 +65,9 @@
       </div>
     </div>
   </div>
-  <script>
+  <script type="text/javascript">
     const video = document.getElementById('video');
-    const videoSrc = 'resources/betty_in_blunderlands/betty_in_blunderLand.m3u8';
+    const videoSrc = 'res/Betty_in_Blunderland/1/betty_in_blunderlands.m3u8';
     if (Hls.isSupported()) {
       const hls = new Hls();
       hls.loadSource(videoSrc);
@@ -81,13 +79,14 @@
         video.play();
       });
     }
-    const isChrome = !!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime);
-
-    if (isChrome) {
-      alert('Formato video non supportato su Chrome, utilizzare Firefox o Safari');
-    }
   </script>
-  <script src="scripts/script.js"></script>
+  <script type="text/javascript">
+    const list = document.getElementById('epList');
+    var content="";var lenght = 4; var listEl;
+    for (var i = 0; i < lenght; i++) {
+      content += '<li><span class="icon">'+(i+1)+'</span><span class="text">title ep 1</span></li >';
+    }
+    list.innerHTML = content;
+  </script>
 </body>
-
 </html>

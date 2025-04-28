@@ -1,7 +1,5 @@
 body {
     margin: 0;
-    width: 100vw;
-
     background: var(--bg-color);
     color: var(--text-color);
 
@@ -16,12 +14,9 @@ body {
 }
 
 .container {
-    height: 100%;
     width: 98%;
+    margin: auto;
     margin-top: 2vh;
-    /*Adjust whith header*/
-    margin-left: 1%;
-    margin-right: 1%;
 }
 
 .top-div {
@@ -29,25 +24,37 @@ body {
 }
 
 .video-div {
-    width: 73vw;
+    width: 75%;
+    height: 80vh;
 }
 
 video {
     width: 100%;
-    height: 80vh;
+    height: 100%;
 
     background-color: black;
     border-radius: 7px;
 }
 
-.epList-div {
-    width: 25vw;
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    margin: auto;
+.epList {
+    width: 25%;
+    height: 100%;
+    border: 1px solid var(--devider-color);
     border-radius: 8px;
-    overflow:scroll;
+
+    list-style-type: none;
+    
+    overflow-y: scroll;
+}
+
+/* hide scrollbar */
+.epList {
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none; /* Firefox */
+}
+
+.epList::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
 }
 
 epList-div li {
