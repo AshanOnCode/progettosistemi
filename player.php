@@ -111,7 +111,8 @@ if (isset($_POST["logout"])) {
 
     <div class="bottom-div">
       <div class="detailes-div">
-        <img class="coverImg" alt="cover_image" src="res/Popeye_the_Sailor/cover.jpg">
+        <img class="coverImg" src="" alt="cover_image">
+        
         <div class="info-div">
 
           <h1 class="title"></h1>
@@ -119,7 +120,7 @@ if (isset($_POST["logout"])) {
           <ul class="tag-list"></ul>
 
           <p class="description"></p>
-
+            
           <div class="dati-div">
 
             <div class="data1">
@@ -156,6 +157,12 @@ if (isset($_POST["logout"])) {
     }
     list.innerHTML = content;
   </script>
+  
+  <script src="scripts/login_button.js"></script>
+  <script src="scripts/home_button.js"></script>
+  <script type="text/javascript">
+    var list = document.getElementsById('epList');
+  </script>
   <script>
     getVideo();
     getTitle();
@@ -165,11 +172,6 @@ if (isset($_POST["logout"])) {
     getCover();
   </script>
   
-  <script src="scripts/login_button.js"></script>
-  <script src="scripts/home_button.js"></script>
-  <script type="text/javascript">
-    var list = document.getElementsById('epList');
-  </script>
 </body>
 
 </html>
