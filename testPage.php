@@ -67,7 +67,9 @@
   </div>
   <script type="text/javascript">
     const video = document.getElementById('video');
+
     const videoSrc = 'res/Betty_in_Blunderland/1/betty_in_blunderlands.m3u8';
+    
     if (Hls.isSupported()) {
       const hls = new Hls();
       hls.loadSource(videoSrc);

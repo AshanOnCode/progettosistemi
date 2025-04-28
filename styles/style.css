@@ -13,6 +13,154 @@ body {
     */
 }
 
+header {
+    position: fixed; /* cambia questo */
+    top: 20px; /* attaccato in alto */
+    left: 20px; /* partenza a sinistra */
+    right: 20px; /* esteso a destra */
+    z-index: 100; /* sta sopra agli altri */
+
+
+    padding: 1%; /* Spazio interno: dentro al box */
+    text-align: center;
+    height: 70px;
+    color: white;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--highlight-low-color-transparent);
+    backdrop-filter: blur(7px); /* applica il blur */
+    -webkit-backdrop-filter: blur(10px);
+
+    border-radius: 25px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+#screen{
+    margin: 25px; /* Spazio esterno: stacca il bordo */
+    padding: 1%; /* Spazio interno: dentro al box */
+}
+
+#login {
+    margin-right: 4%;
+    position: relative;
+    right: 0;
+    display: flex;
+    align-items: center;
+}  
+
+#main {
+    margin-top: 110px;
+    padding-top: 3%;
+    border-radius: 25px;
+    align-items: center;
+    background-image: 
+        linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)),  /* gradiente sopra */
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)), /* gradiente sotto */
+        url('/res/ui/popeye.jpg'); /* immagine di sfondo */
+    background-size: cover; /* fa sì che l'immagine copra l'intero elemento */
+    background-position: center; /* centra l'immagine */
+    background-repeat: no-repeat; /* impedisce la ripetizione dell'immagine */
+    height: 50vh;
+}
+
+#login_window {
+    display: none;
+    position: fixed;
+    margin-top: 50px;
+    z-index: 1000;
+    background-color: var(--highlight-low-color-transparent);
+    backdrop-filter: blur(3px); /* applica il blur */
+    -webkit-backdrop-filter: blur(10px);
+    padding: 25px;
+    width: 50%;
+    height: 50%;
+    max-width: 600px; 
+    max-height: 400px;
+    border-radius: 25px; 
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+
+#login button{
+    margin-left: 5px;
+    color: white;
+    border-color: transparent;
+    background-color: transparent; /* Rende lo sfondo trasparente */
+    cursor: pointer; /* Cambia il cursore per indicare che è cliccabile */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Effetto di transizione per il cambio colore */
+}
+
+#place_holder{
+    width: 100;
+    height: 200vh;
+}
+
+
+#main h1{
+    font-size: 40px;
+    margin-left: 4%;
+}
+
+#form {
+    padding: 20px;
+    background-color: black;
+}
+
+.scroll-box{
+    overflow-x: scroll;
+    width: 100%;
+    height: 250px;
+    display: flex;
+}
+
+#series-container{
+    border-radius: 10px;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: var(--highlight-low-color);
+}
+
+#series-container h1{
+    margin: 20px;
+}
+
+
+#serie-button{
+    transition: ease-in 0.1s;
+    border: 0px;
+    border-radius: 10px;
+    margin:20px;
+    height:210px;
+    width: 373px;
+    background-color: black;
+    flex-shrink: 0;
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+}
+
+#serie-button:hover{
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+    margin:0;
+    transition: ease-in 0.1s;
+    height:230px;
+    width: 420px;
+}
+
+header img{
+   height: 40px;
+}
+
+header h1{
+    margin-left: 4%;
+}
+
+/* CIAO */
+
 .container {
     width: 98%;
     margin: auto;
