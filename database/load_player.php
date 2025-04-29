@@ -1,25 +1,31 @@
-
-<?php
-
-    require_once "database/database.php";
-
-    $path = $_GET["title"];
-    
-    $title_u = str_replace("_", " ", $path);   
-
-    $serie = $videosStore->findOneBy(["title", "=", $title_u]);
-
-    $serie_encoded = json_encode($serie);
-?>
-
 <script>
 
-    var serie = <?php echo $serie_encoded;?>;
+
+    var serie = null;
     let episodio = 1;
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const path = urlParams.get("title");
+
+    async function caricaPagina(){
+        try {
+
+            const response = await fetch(`./getSerie.php?title=${path}`);
+
+            if (!response.ok) throw new Error("Errore nel fetch");
+
+            serie = await response.json();
+
+            initializePage();
+            generaEp();
+
+        } catch (err) {
+            console.error("Errore nel caricamento:", err);
+        }
+    }
 
     function setEpisodio(numero){
         episodio=numero;
-        console.log(episodio);
     }
 
     function getVideo(){
@@ -28,21 +34,15 @@
 
         const video = document.getElementById('video');
 
-        const videoSrc = `res/<?php echo $path?>/${episodio}/video.m3u8`;
+        const videoSrc = `res/${path}/${episodio}/video.m3u8`;
 
         if (Hls.isSupported()) {
             const hls = new Hls();
             hls.loadSource(videoSrc);
             hls.attachMedia(video);
-            } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-            // Per safari che supporta HLS
+        } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
             video.src = videoSrc;
-            video.addEventListener('loadedmetadata', function () {
-                video.play();
-            });
         }
-        console.log(title, episodio);
-
     }
 
     function getTitle(){
@@ -58,7 +58,7 @@
             element.appendChild(p);
 
         }
-    
+
     }
 
     function getDescription(){
@@ -69,7 +69,7 @@
 
             element.textContent = serie.description;
         }
-    
+
     }
 
     function getTagList(){
@@ -79,7 +79,7 @@
             const element = elements[index];
             for (let j = 0; j < serie.genres.length; j++) {
                 const genres = serie.genres[j];
-                
+
                 var li = document.createElement('li');
 
                 li.textContent = genres;
@@ -94,13 +94,13 @@
 
         for (let index = 0; index < elements.length; index++) {
             const element = elements[index];
-           
-            if (index==1) {
+
+            if (index===1) {
                 element.textContent = serie.studio;
             }else{
                 element.textContent = serie.year;
             }
-           
+
         }
     }
 
@@ -109,11 +109,10 @@
 
         for (let i = 0; i < coverImage.length; i++) {
             const element = coverImage[i];
-            
-            element.alt = `res/<?php echo $path?>/cover.jpg`;
-            element.src = `res/<?php echo $path?>/cover.jpg`;
-            
-            console.log(`res/<?php echo $path?>/cover.jpg`);
+
+            element.alt = `/res/${path}/cover.jpg`;
+            element.src = `/res/${path}/cover.jpg`;
+
         }
     }
 
@@ -125,6 +124,6 @@
         getStudio();
         getCover();
     }
-    
-  </script>
- 
+
+    window.addEventListener("DOMContentLoaded", caricaPagina);
+</script>

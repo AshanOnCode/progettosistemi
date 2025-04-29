@@ -16,6 +16,8 @@
 
 <body>
 
+    <div id="background"></div>
+
     <div id="profile_window">
         <div>
             <h1>
