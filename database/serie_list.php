@@ -8,7 +8,11 @@
         if ($i > $count - 1) {
             return "res/Placeholder/img.jpg";
         }
-        
+
+        if(!file_exists("res/" . title_to_directory($user[$i]["title"]) . "/img.jpg")){
+            return "res/Placeholder/img.jpg";
+        }
+
         return "res/" . title_to_directory($user[$i]["title"]) . "/img.jpg";
     }
 

@@ -110,8 +110,8 @@
         for (let i = 0; i < coverImage.length; i++) {
             const element = coverImage[i];
 
-            element.alt = `/res/${path}/cover.jpg`;
-            element.src = `/res/${path}/cover.jpg`;
+            element.alt = `res/${path}/cover.jpg`;
+            element.src = `res/${path}/cover.jpg`;
 
         }
     }
