@@ -11,11 +11,22 @@ require_once "functions.php";
   <link rel="stylesheet" href="styles/player.css">
   <link rel="stylesheet" href="styles/themes/rose-pine.css">
   <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-  <?php include "database/video_script.php" ?>
+  <?php include "database/load_player.php" ?>
   <?php include "database/episode_list.php" ?>
 </head>
 
 <body>
+
+
+  <div id="background"></div>
+
+  
+  <div id="profile_window">
+          <h1>
+              <?php if (isset($_SESSION["username"])){ echo $_SESSION["username"]; }?>
+                  's profile window
+          </h1>
+    </div>
 
   <div id="login_window">
 
@@ -54,6 +65,7 @@ require_once "functions.php";
 
 
   <div class="container">
+
     <header>
       <h1 class="home_button">OpenTube</h1>
       <div id="login">
@@ -126,12 +138,9 @@ require_once "functions.php";
   </div>
 
   <script src="scripts/login_button.js"></script>
+  <script src="scripts/profile_button.js"></script>
   <script src="scripts/home_button.js"></script>
   <script src="scripts/register_button.js"></script>
-  <script>
-    initializePage();
-    generaEp();
-  </script>
 </body>
 
 </html>

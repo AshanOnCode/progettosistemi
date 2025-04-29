@@ -50,6 +50,13 @@ header h1 {
     padding: 1%;
 }
 
+#background{
+    display: none;
+    position: fixed;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+}
 
 #login {
     position: relative;
@@ -77,28 +84,28 @@ header h1 {
 
 #login_window {
     display: none;
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     
     z-index: 1000;
-    padding: 8%;
+    padding: 7%;
     
     background-color: var(--bg-color);
-    border: 5px solid var(--highlight-low-color);
+    border: 4px solid var(--text-color);
     border-radius: 10px;
 }
 
 #profile_window {
     display: none;
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     
     z-index: 1000;
-    padding: 8%;
+    padding: 7%;
     
     background-color: var(--bg-color);
     border: 5px solid var(--highlight-low-color);
@@ -113,11 +120,20 @@ header h1 {
 }
 
 .register {
-    position: absolute;
+    position: position;
     left: 0;
     bottom: 0;
     
     margin: 7%;
+    padding: 13px;
+}
+
+.register h1{
+    position: absolute;
+    top:0;
+    background-color: rebeccapurple;
+    
+    margin: 0;
     padding: 13px;
 }
 
@@ -181,9 +197,12 @@ form input {
     display: flex;
     overflow-x: scroll;
     overflow-y: hidden;
-    
+    scrollbar-width: thin;
+    scrollbar-color: white transparent;
     width: 100%;
 }
+
+
 
 
 .series-container {
@@ -201,6 +220,7 @@ form input {
 
 #serie-button {
     margin: 20px;
+    position: relative;
     
     width: 373px;
     height: 210px;
@@ -215,6 +235,15 @@ form input {
     background-repeat: no-repeat;
     
     transition: ease-in 0.1s;
+}
+
+#serie-button h1 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 5px;
+    color: var(--text-color);
+    text-shadow: 5px 5px 20px black ;
 }
 
 #serie-button:hover {
