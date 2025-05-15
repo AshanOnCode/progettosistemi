@@ -1,4 +1,4 @@
-# Nome del Progetto
+# OpenTube
 
 Lo scopo del progetto è stato creare un sito web di streaming on demand dedicato
 alla riproduzione di film e serie TV d’epoca.
