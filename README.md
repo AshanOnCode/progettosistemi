@@ -5,8 +5,7 @@ alla riproduzione di film e serie TV d’epoca.
 
 ## 💻Tecnologie utilizzate:
 
-Le tecnologie utilizzate sono: ***PHP, HTML, JavaScript, librerie (SleekDB e Hls) e
-database NoSQL.***
+Le tecnologie utilizzate sono: ***PHP, HTML, JavaScript, librerie (SleekDB e Hls).***
 
 ## 💡Concezione dell’idea :
 L’idea è nata dal comune pensiero che ancora non fosse presente su internet un
